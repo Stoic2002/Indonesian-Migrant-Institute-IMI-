@@ -1,5 +1,4 @@
-import { ArrowRight, Shield, Users, Globe, Sparkles, CheckCircle } from 'lucide-react';
-import heroImage from '../images/hero.jpg'; 
+import { ArrowRight, Shield, Users, Globe, Sparkles, CheckCircle } from 'lucide-react'; 
 
 const Hero = () => {
   return (
@@ -83,7 +82,7 @@ const Hero = () => {
             <div className="relative z-10">
               <div className="bg-white/20 rounded-4xl p-2 border border-white/30">
                 <img
-                  src={heroImage}
+                  src="/images/hero.jpg"
                   alt="Indonesian Migrant Workers"
                   className="rounded-4xl shadow-2xl object-cover w-full h-[500px]"
                 />

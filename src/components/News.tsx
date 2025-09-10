@@ -1,15 +1,12 @@
 import { Calendar, ArrowRight, Clock, User, Newspaper, Mail } from 'lucide-react';
 
 const News = () => {
-  // Helper function to resolve image paths correctly in Vite
-  const getImageUrl = (path: string) => new URL(path, import.meta.url).href;
-
   const newsItems = [
     {
       id: 1,
       title: "IMI Luncurkan Program Pelatihan Digital untuk Migran",
       excerpt: "Program pelatihan keterampilan digital ini akan membantu migran Indonesia meningkatkan kompetensi di era teknologi.",
-      image: getImageUrl("../images/DSA01539.jpg"), 
+      image: "/images/DSA01539.jpg", 
       date: "15 Januari 2025",
       readTime: "5 min",
       author: "Tim IMI",
@@ -19,7 +16,7 @@ const News = () => {
       id: 2,
       title: "Kerjasama IMI dengan Pemerintah Malaysia",
       excerpt: "Penandatanganan MoU untuk meningkatkan perlindungan pekerja migran Indonesia di Malaysia.",
-      image: getImageUrl("../images/DSA01518.jpg"), 
+      image: "/images/DSA01518.jpg", 
       date: "10 Januari 2025",
       readTime: "7 min",
       author: "Direktur IMI",
@@ -29,7 +26,7 @@ const News = () => {
       id: 3,
       title: "Workshop Kewirausahaan untuk Mantan Migran",
       excerpt: "IMI mengadakan workshop kewirausahaan untuk membantu mantan migran memulai usaha di Indonesia.",
-      image: getImageUrl("../images/DSA01465.jpg"), 
+      image: "/images/DSA01465.jpg", 
       date: "8 Januari 2025",
       readTime: "4 min",
       author: "Divisi Program",
@@ -39,7 +36,7 @@ const News = () => {
       id: 4,
       title: "IMI Raih Penghargaan Organisasi Terbaik 2024",
       excerpt: "Indonesian Migrant Institute meraih penghargaan sebagai organisasi advokasi migran terbaik di Asia Tenggara.",
-      image: getImageUrl("../images/DSA01401.jpg"),
+      image: "/images/DSA01401.jpg",
       date: "5 Januari 2025",
       readTime: "6 min",
       author: "Humas IMI",

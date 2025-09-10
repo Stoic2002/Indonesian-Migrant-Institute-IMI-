@@ -16,14 +16,11 @@ const Documentation = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Ensure Vite resolves image paths correctly
-  const toUrl = useCallback((path: string) => new URL(path, import.meta.url).href, []);
-
   // Photo data using actual images from the project
   const [photos] = useState<Photo[]>([
     {
       id: '1',
-      url: toUrl('../images/DSA01539.jpg'),
+      url: '/images/DSA01539.jpg',
       title: 'Pelatihan Keterampilan Kerja',
       description: 'Sesi pelatihan intensif untuk meningkatkan kemampuan kerja calon migran sebelum keberangkatan',
       category: 'training',
@@ -32,7 +29,7 @@ const Documentation = () => {
     },
     {
       id: '2',
-      url: toUrl('../images/DSA01518.jpg'),
+      url: '/images/DSA01518.jpg',
       title: 'Konsultasi Hukum Gratis',
       description: 'Layanan konsultasi hukum gratis untuk migran yang menghadapi masalah ketenagakerjaan',
       category: 'consultation',
@@ -41,7 +38,7 @@ const Documentation = () => {
     },
     {
       id: '3',
-      url: toUrl('../images/DSA01465.jpg'),
+      url: '/images/DSA01465.jpg',
       title: 'Program Jangkauan Masyarakat',
       description: 'Sosialisasi program IMI kepada masyarakat di daerah pengirim migran',
       category: 'outreach',
@@ -50,7 +47,7 @@ const Documentation = () => {
     },
     {
       id: '4',
-      url: toUrl('../images/DSA01401.jpg'),
+      url: '/images/DSA01401.jpg',
       title: 'Seminar Kesehatan & Keselamatan',
       description: 'Edukasi tentang standar kesehatan dan keselamatan kerja di luar negeri',
       category: 'seminar',
@@ -59,7 +56,7 @@ const Documentation = () => {
     },
     {
       id: '5',
-      url: toUrl('../images/DSA01375.jpg'),
+      url: '/images/DSA01375.jpg',
       title: 'Pertemuan Advokasi Kebijakan',
       description: 'Diskusi strategis dengan pemerintah tentang kebijakan perlindungan migran',
       category: 'advocacy',
@@ -68,7 +65,7 @@ const Documentation = () => {
     },
     {
       id: '6',
-      url: toUrl('../images/DSA01369.jpg'),
+      url: '/images/DSA01369.jpg',
       title: 'Workshop Integrasi Budaya',
       description: 'Membantu migran memahami dan beradaptasi dengan budaya negara tujuan',
       category: 'training',
@@ -77,7 +74,7 @@ const Documentation = () => {
     },
     {
       id: '7',
-      url: toUrl('../images/DSA01367.jpg'),
+      url: '/images/DSA01367.jpg',
       title: 'Pendampingan Reintegrasi',
       description: 'Program pendampingan untuk migran yang kembali ke Indonesia',
       category: 'outreach',
@@ -86,7 +83,7 @@ const Documentation = () => {
     },
     {
       id: '8',
-      url: toUrl('../images/DSA01335.jpg'),
+      url: '/images/DSA01335.jpg',
       title: 'Pelatihan Digital dan Teknologi',
       description: 'Workshop penggunaan teknologi digital untuk migran modern',
       category: 'training',
@@ -95,7 +92,7 @@ const Documentation = () => {
     },
     {
       id: '9',
-      url: toUrl('../images/DSA01326.jpg'),
+      url: '/images/DSA01326.jpg',
       title: 'Rapat Koordinasi Program',
       description: 'Koordinasi internal untuk evaluasi dan perencanaan program IMI',
       category: 'advocacy',
@@ -104,7 +101,7 @@ const Documentation = () => {
     },
     {
       id: '10',
-      url: toUrl('../images/DSA01317.jpg'),
+      url: '/images/DSA01317.jpg',
       title: 'Seminar Hak-hak Pekerja',
       description: 'Edukasi tentang hak-hak fundamental pekerja migran Indonesia',
       category: 'seminar',
@@ -113,7 +110,7 @@ const Documentation = () => {
     },
     {
       id: '11',
-      url: toUrl('../images/DSA01248.jpg'),
+      url: '/images/DSA01248.jpg',
       title: 'Konsultasi Keluarga Migran',
       description: 'Layanan konseling untuk keluarga yang ditinggalkan migran',
       category: 'consultation',
@@ -122,7 +119,7 @@ const Documentation = () => {
     },
     {
       id: '12',
-      url: toUrl('../images/DSA01227.jpg'),
+      url: '/images/DSA01227.jpg',
       title: 'Forum Diskusi Kebijakan',
       description: 'Forum terbuka membahas isu-isu terkini tentang migrasi tenaga kerja',
       category: 'advocacy',

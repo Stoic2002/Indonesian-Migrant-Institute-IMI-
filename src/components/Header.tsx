@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, Globe } from 'lucide-react';
-import logo from '../images/logo.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +45,7 @@ const Header = () => {
             <div className="relative">
               <div className="w-16 h-16 flex items-center justify-center bg-white rounded-2xl shadow-lg border border-secondary-200 transition-transform duration-300 hover:scale-105">
                 <img
-                  src={logo}
+                  src="/images/logo.jpg"
                   alt="Logo IMI"
                   className="object-contain w-12 h-12"
                 />
