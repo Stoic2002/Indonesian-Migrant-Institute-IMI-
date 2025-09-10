@@ -1,3 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-white text-secondary-900;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+
+  /* Performance optimizations */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-black/10;
+  }
+  
+  /* Web3 Card styles - Optimized */
+  .web3-card {
+    @apply bg-white border border-secondary-200 rounded-2xl p-6 transition-shadow duration-200 hover:shadow-xl hover:border-primary-300;
+    will-change: box-shadow, border-color;
+  }
+  
+  .web3-card-dark {
+    @apply bg-secondary-900 border border-secondary-700 rounded-2xl p-6 transition-shadow duration-200 hover:shadow-xl hover:border-primary-600;
+    will-change: box-shadow, border-color;
+  }
+  
+  /* Button styles - Optimized */
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 hover:bg-primary-700;
+    will-change: background-color;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-900 px-6 py-3 rounded-xl font-medium transition-colors duration-200 hover:bg-secondary-200;
+    will-change: background-color;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-xl font-medium transition-colors duration-200 hover:bg-primary-600 hover:text-white;
+    will-change: background-color, color;
+  }
+  
+  /* Performance utilities */
+  .gpu-accelerated {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimized hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Image loading optimization */
+  .lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .lazy-image.loaded {
+    opacity: 1;
+  }
+}

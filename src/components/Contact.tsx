@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Linkedin, MessageCircle, AlertCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,12 +32,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-24 bg-secondary-50 relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <MessageCircle size={16} />
+            <span>Hubungi Kami</span>
+          </div>
+          <h2 className="text-5xl font-display font-bold text-secondary-900 mb-6">
+            Mari Berkomunikasi
+            <span className="block text-primary-600">dengan Kami</span>
+          </h2>
+          <p className="text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed">
             Tim kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui 
             berbagai saluran komunikasi yang tersedia.
           </p>
@@ -47,33 +54,42 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="lg:col-span-1 space-y-8">
             {/* Emergency Hotline */}
-            <div className="bg-red-600 text-white p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-4">Hotline Darurat 24/7</h3>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <Phone size={18} />
-                  <span className="font-semibold">+62 21 5555-1234</span>
+            <div className="web3-card bg-red-600 text-white relative">
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-4">
+                  <AlertCircle className="text-white" size={24} />
+                  <h3 className="text-xl font-bold">Hotline Darurat 24/7</h3>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Phone size={18} />
-                  <span className="font-semibold">+62 811-5555-678</span>
+                <div className="space-y-3">
+                  <a href="tel:+622155551234" className="flex items-center space-x-3 p-3 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300">
+                    <Phone size={18} />
+                    <span className="font-semibold">+62 21 5555-1234</span>
+                  </a>
+                  <a href="tel:+628115555678" className="flex items-center space-x-3 p-3 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300">
+                    <Phone size={18} />
+                    <span className="font-semibold">+62 811-5555-678</span>
+                  </a>
                 </div>
+                <p className="text-sm text-red-100 mt-4">
+                  Untuk situasi darurat dan bantuan segera
+                </p>
               </div>
-              <p className="text-sm opacity-90 mt-3">
-                Untuk situasi darurat dan bantuan segera
-              </p>
+              
+              {/* Geometric decorations */}
+              <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-lg"></div>
+              <div className="absolute bottom-4 left-4 w-6 h-6 bg-white/10 rounded-full"></div>
             </div>
 
             {/* Contact Cards */}
-            <div className="space-y-4">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+            <div className="space-y-6">
+              <div className="web3-card bg-primary-50 border-primary-200 group hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <MapPin className="text-blue-600" size={24} />
+                  <div className="bg-primary-600 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-2">Alamat Kantor</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-secondary-900 mb-3 text-lg">Alamat Kantor</h4>
+                    <p className="text-secondary-600 leading-relaxed">
                       Jl. Kemanggisan Raya No. 15<br />
                       Jakarta Barat 11480<br />
                       Indonesia
@@ -82,27 +98,33 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="web3-card bg-green-50 border-green-200 group hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Mail className="text-green-600" size={24} />
+                  <div className="bg-green-600 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-2">Email</h4>
-                    <p className="text-gray-600">info@indonesianmigrant.org</p>
-                    <p className="text-gray-600">help@indonesianmigrant.org</p>
+                    <h4 className="font-bold text-secondary-900 mb-3 text-lg">Email</h4>
+                    <div className="space-y-1">
+                      <a href="mailto:info@indonesianmigrant.org" className="block text-secondary-600 hover:text-green-600 transition-colors">
+                        info@indonesianmigrant.org
+                      </a>
+                      <a href="mailto:help@indonesianmigrant.org" className="block text-secondary-600 hover:text-green-600 transition-colors">
+                        help@indonesianmigrant.org
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="web3-card bg-accent-50 border-accent-200 group hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 p-3 rounded-full">
-                    <Clock className="text-orange-600" size={24} />
+                  <div className="bg-accent-600 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 mb-2">Jam Operasional</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-secondary-900 mb-3 text-lg">Jam Operasional</h4>
+                    <p className="text-secondary-600 leading-relaxed">
                       Senin - Jumat: 08:00 - 17:00<br />
                       Sabtu: 08:00 - 12:00<br />
                       Minggu: Tutup
@@ -113,19 +135,19 @@ const Contact = () => {
             </div>
 
             {/* Social Media */}
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-bold text-gray-800 mb-4">Ikuti Kami</h4>
+            <div className="web3-card">
+              <h4 className="font-bold text-secondary-900 mb-6 text-lg">Ikuti Kami</h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-blue-600 p-3 rounded-full text-white hover:bg-blue-700 transition-colors">
+                <a href="#" className="bg-blue-600 p-3 rounded-2xl text-white hover:bg-blue-700 hover:scale-110 transition-all duration-300">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="bg-sky-500 p-3 rounded-full text-white hover:bg-sky-600 transition-colors">
+                <a href="#" className="bg-sky-500 p-3 rounded-2xl text-white hover:bg-sky-600 hover:scale-110 transition-all duration-300">
                   <Twitter size={20} />
                 </a>
-                <a href="#" className="bg-pink-600 p-3 rounded-full text-white hover:bg-pink-700 transition-colors">
+                <a href="#" className="bg-pink-600 p-3 rounded-2xl text-white hover:bg-pink-700 hover:scale-110 transition-all duration-300">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="bg-blue-800 p-3 rounded-full text-white hover:bg-blue-900 transition-colors">
+                <a href="#" className="bg-blue-800 p-3 rounded-2xl text-white hover:bg-blue-900 hover:scale-110 transition-all duration-300">
                   <Linkedin size={20} />
                 </a>
               </div>
@@ -134,12 +156,12 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h3>
+            <div className="web3-card">
+              <h3 className="text-3xl font-display font-bold text-secondary-900 mb-8">Kirim Pesan</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-secondary-900 mb-3">
                       Nama Lengkap *
                     </label>
                     <input
@@ -149,12 +171,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white hover:border-primary-300"
                       placeholder="Masukkan nama lengkap"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-secondary-900 mb-3">
                       Email *
                     </label>
                     <input
@@ -164,7 +186,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white hover:border-primary-300"
                       placeholder="Masukkan email"
                     />
                   </div>
@@ -172,7 +194,7 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-secondary-900 mb-3">
                       Nomor Telepon
                     </label>
                     <input
@@ -181,12 +203,12 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white hover:border-primary-300"
                       placeholder="Masukkan nomor telepon"
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-semibold text-secondary-900 mb-3">
                       Subjek *
                     </label>
                     <select
@@ -195,7 +217,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white hover:border-primary-300"
                     >
                       <option value="">Pilih subjek</option>
                       <option value="bantuan-hukum">Bantuan Hukum</option>
@@ -208,7 +230,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-secondary-900 mb-3">
                     Pesan *
                   </label>
                   <textarea
@@ -218,30 +240,39 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors resize-none"
+                    className="w-full px-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none bg-white hover:border-primary-300"
                     placeholder="Tuliskan pesan Anda..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-red-600 text-white py-4 px-6 rounded-lg hover:bg-red-700 transition-colors font-semibold flex items-center justify-center space-x-2"
+                  className="w-full btn-primary py-4 px-6 text-lg flex items-center justify-center space-x-3"
                 >
                   <Send size={20} />
                   <span>Kirim Pesan</span>
                 </button>
               </form>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">
-                  <strong>Catatan:</strong> Untuk kasus darurat, silakan hubungi hotline 24/7 kami. 
-                  Tim customer service akan merespons pesan Anda dalam 1x24 jam pada hari kerja.
-                </p>
+              <div className="mt-8 p-6 bg-primary-50 rounded-xl border border-primary-200">
+                <div className="flex items-start space-x-3">
+                  <AlertCircle className="text-primary-600 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <p className="text-sm text-secondary-700 leading-relaxed">
+                      <span className="font-semibold">Catatan:</span> Untuk kasus darurat, silakan hubungi hotline 24/7 kami. 
+                      Tim customer service akan merespons pesan Anda dalam 1x24 jam pada hari kerja.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Background geometric elements */}
+      <div className="absolute top-32 right-16 w-24 h-24 bg-primary-200 rounded-4xl opacity-20 animate-pulse-slow"></div>
+      <div className="absolute bottom-32 left-16 w-32 h-32 bg-accent-200 rounded-full opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
     </section>
   );
 };
